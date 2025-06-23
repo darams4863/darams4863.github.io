@@ -10,3 +10,11 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+docs:
+  - title: "홈"
+    url: /
+  - title: "소개"
+    url: /about/
+  - title: "아카이브"
+    url: /year-archive/
