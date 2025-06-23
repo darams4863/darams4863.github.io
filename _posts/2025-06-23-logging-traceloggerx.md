@@ -50,15 +50,18 @@ UnicodeEncodeError: 'utf-8' codec can't encode character '\ud83d'
 PYTHONIOENCODING=utf-8
 ```
 
-하지만 문제는 예상보다 훨씬 깊었다.
+실제로 Python에서 출력 인코딩 문제는 이 설정으로 해결되는 경우가 많아서, 처음엔 큰 문제라고 생각하지 않았다.  
+그런데 이건 단순한 인코딩 문제가 아니었다.
 
-### 🔍 문제의 본질은 Surrogate Pair + FileHandler
+### 🔍 문제의 본질: Surrogate Pair + FileHandler + rich의 비정상 종료
 
-- rich는 콘솔 출력에 특화되어 있어, 내부적으로 `sys.stderr`에 직접 쓰는 방식
-- 그러나 파일 핸들러는 locale에 따라 인코딩이 달라지며, 이모지(😅) 등 surrogate pair가 포함될 경우 `UnicodeEncodeError` 발생
-- 콘솔 출력은 멀쩡한데, 로그 파일 저장 중 오류가 발생
+- rich는 콘솔 출력에 특화된 라이브러리고, 내부적으로 `sys.stderr`에 직접 출력하는 방식이다.
+- 그런데 로그에 이모지 같은 문자가 포함되면 UTF-16 surrogate pair 문제가 발생해 `UnicodeEncodeError`가 뜨는 상황이 생긴다.
+- 문제는 여기서 끝이 아니라, 이 에러가 rich 내부에서 처리되는 방식이 비정상적이었다.
+- rich는 traceback 출력 중 예외가 발생하면 **해당 asyncio Task를 아예 취소(cancel)** 해버리는 경우가 있었고, 그 영향으로 스케줄러가 멈춰버렸다.
 
-결국 `rich`를 걷어내고, 다시 기본 `logging`으로 돌아갈 수밖에 없었다.
+결국 로그 한 줄 찍으려다가, **전체 로직이 중단되는 상황**이 실제로 발생했고  
+이걸 보고 나서야 rich를 로깅에서 걷어내야겠다는 결정을 내렸다.
 
 ---
 

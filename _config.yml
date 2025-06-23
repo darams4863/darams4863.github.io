@@ -102,6 +102,7 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+  github: https://github.com/darams4863
 
 # Analytics
 analytics:
@@ -180,7 +181,6 @@ exclude:
   - README
   - tmp
   - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
@@ -252,6 +252,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -315,3 +316,34 @@ defaults:
 
 sidebar:
   nav: "docs"
+
+# Chirpy theme settings
+# https://github.com/cotes2020/jekyll-theme-chirpy#configuration
+
+# Social links
+social:
+  github: https://github.com/darams4863
+
+# Theme mode
+# light, dark, or auto (default: auto)
+theme_mode: auto
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude folders/files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - test
+  - _sass
+
+# 기타 Chirpy 설정은 필요시 추가

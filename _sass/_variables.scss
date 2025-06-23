@@ -1,0 +1,14 @@
+// Chirpy theme color variables
+
+$primary-color: map-get($light-palette, 'theme');
+$background-color: map-get($light-palette, 'background');
+$text-color: map-get($light-palette, 'text');
+$card-color: map-get($light-palette, 'card');
+$border-color: map-get($light-palette, 'border');
+
+// 다크 모드 변수
+$primary-color-dark: map-get($dark-palette, 'theme');
+$background-color-dark: map-get($dark-palette, 'background');
+$text-color-dark: map-get($dark-palette, 'text');
+$card-color-dark: map-get($dark-palette, 'card');
+$border-color-dark: map-get($dark-palette, 'border'); 
