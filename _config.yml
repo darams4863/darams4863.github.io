@@ -244,6 +244,11 @@ pagination:
     after: 2
 
 
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
