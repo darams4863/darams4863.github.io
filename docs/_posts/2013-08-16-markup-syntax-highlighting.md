@@ -86,7 +86,7 @@ Indentation matters. Be sure the indent of the code block aligns with the first 
 
 ### Jekyll Highlight Tag
 
-An example of a code blocking using Jekyll's [`{% raw %}{% highlight %}{% endraw %}` tag](https://jekyllrb.com/docs/templates/#code-snippet-highlighting).
+An example of a code blocking using Jekyll's [`{% raw %}{% highlight python %}{% endraw %}` tag](https://jekyllrb.com/docs/templates/#code-snippet-highlighting).
 
 {% highlight javascript linenos %}
 // 'gulp html' -- does nothing

@@ -1251,13 +1251,13 @@ toc: false
 
 ### Bug Fixes
 
-- Fix Firefox alignment issues with code blocks generated with the `{% highlight %}` tag. [#512](https://github.com/mmistakes/minimal-mistakes/issues/512)
+- Fix Firefox alignment issues with code blocks generated with the `{% highlight python %}` tag. [#512](https://github.com/mmistakes/minimal-mistakes/issues/512)
 
 ### Maintenance
 
 - Clarified comment for `author.stackoverflow` value used in author sidebar links. [#487](https://github.com/mmistakes/minimal-mistakes/pull/487)
 - Add list of localized text strings. [#488](https://github.com/mmistakes/minimal-mistakes/pull/488)
-- Add `{% highlight %}` code block examples to demo site.
+- Add `{% highlight python %}` code block examples to demo site.
 - Add documentation for using custom sidebar navigation menus. [#476](https://github.com/mmistakes/minimal-mistakes/issues/476)
 
 ## [3.4.4](https://github.com/mmistakes/minimal-mistakes/releases/tag/3.4.4)
