@@ -337,11 +337,6 @@ theme_mode: auto
 markdown: kramdown
 highlighter: rouge
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
 # Exclude folders/files
 exclude:
   - Gemfile
