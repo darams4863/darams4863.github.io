@@ -8,6 +8,8 @@ main:
     url: /collection-archive/
   - title: "Tags"
     url: /tags/
+  - title: "Algorithm"
+    url: /algorithm/
 
 # docs:
 #   - title: "홈"
